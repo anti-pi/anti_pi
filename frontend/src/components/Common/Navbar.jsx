@@ -18,20 +18,34 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  return (
+   const [isLoggedIn] = useState(false);
+return (
     <>
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6">
+    <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         <div>
-          <Link to="/" className="text-2xl font-medium">
-            Anti-Pi
-          </Link>
+            <Link to="/" className="text-2xl font-medium">
+                Anti-Pi
+            </Link>
         </div>
-        <div className="hidden md:flex space-x-6">
-          <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">Softwares</Link>
-          <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">Movies</Link>
-          <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">Courses</Link>
-          <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">Others</Link>
+        <div className='hidden md:flex space-x-6'>
+        
+            <Link to='/collections/all' className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+                All
+            </Link>
+            <Link to='/collections/software' className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+                Softwares
+            </Link>
+            <Link to='/collections/movies' className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+                Movies
+            </Link>
+            <Link to='/collections/courses' className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+                Courses
+            </Link>
+            <Link to='/collections/others' className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+                Others
+            </Link>
         </div>
+        
         <div className="flex items-center space-x-4">
           <Link to="/Admin" className="block bg-black px-2 rounded text-sm text-white">Admin</Link>
           <div className="flex items-center space-x-4">
@@ -54,25 +68,26 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} />
+    <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer}/>
+    <div className={`fixed top-0 left-0 w-3/4 sm:w-1/2 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${navDrawerOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <div className='flex justify-end p-4'>
+            <button onClick={toggleNavDrawer}>
+                <IoMdClose className="h-6 w-6 text-gray-600" />
+            </button>
+        </div>
+        <div className='p-4'>
+            <h2 className="text-xl font-semibold mb-4">Menu</h2>
+            <nav className='space-y-4'>
+                <Link to="/collections/all" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">All</Link>
+                <Link to="/collections/software" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Softwares</Link>
+                <Link to="/collections/movies" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Movies</Link>
+                <Link to="/collections/courses" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Courses</Link>
+                <Link to="/collections/others" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Others</Link>
 
-      {/* Mobile Drawer */}
-      <div className={`fixed top-0 left-0 w-3/4 sm:w-1/2 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${navDrawerOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <div className="flex justify-end p-4">
-          <button onClick={toggleNavDrawer}>
-            <IoMdClose className="h-6 w-6 text-gray-600" />
-          </button>
+            </nav>
+
         </div>
-        <div className="p-4">
-          <h2 className="text-xl font-semibold mb-4">Menu</h2>
-          <nav className="space-y-4">
-            <Link to="#" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Softwares</Link>
-            <Link to="#" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Movies</Link>
-            <Link to="#" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Courses</Link>
-            <Link to="#" onClick={toggleNavDrawer} className="block text-gray-600 hover:text-black">Others</Link>
-          </nav>
-        </div>
-      </div>
+    </div>
     </>
   );
 };

@@ -12,6 +12,11 @@ import UserManagement from './pages/Admin/UserManagement';
 import ProductManagement from './pages/Admin/ProductManagement';
 import EditProductPage from './pages/Admin/EditProductPage';
 import OrderManagement from './components/Admin/OrderManagement';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import MyOrdersPage from './pages/MyOrdersPage';
+import CollectionPage from './pages/CollectionPage';
 
 export const App = () => {
   return (
@@ -21,7 +26,13 @@ export const App = () => {
         {/* User routes */}
         <Route path="/" element={<UserLayout />}>
           <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />}   />
+            <Route path="/myorders" element={<MyOrdersPage />} />
+            <Route path="/collections/:collection" element={<CollectionPage />} />
         </Route>
+       
 
         {/* Admin routes */}
         <Route path="/admin" element={<AdminLayout />}>
