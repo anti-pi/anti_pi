@@ -7,11 +7,11 @@ import Home from "./pages/Home";
 import AdminLayout from './components/Admin/AdminLayout';
 import AdminHomePage from './pages/Admin/AdminHomePage';
 import AdminProducts from './pages/Admin/AdminProducts';
-import AdminOrders from './pages/Admin/AdminOrders';
 import AdminShop from './pages/Admin/AdminShop';
 import UserManagement from './pages/Admin/UserManagement';
 import ProductManagement from './pages/Admin/ProductManagement';
 import EditProductPage from './pages/Admin/EditProductPage';
+import OrderManagement from './components/Admin/OrderManagement';
 
 export const App = () => {
   return (
@@ -28,7 +28,7 @@ export const App = () => {
           <Route index element={<AdminHomePage />} />
           <Route path="products" element={<ProductManagement />} />
           <Route path="products/:id/edit" element={<EditProductPage />} />
-          <Route path="orders" element={<AdminOrders />} />
+          <Route path="orders" element={<OrderManagement />} />
           <Route path="shop" element={<AdminShop />} />
           <Route path="users" element={<UserManagement />} />
         </Route>

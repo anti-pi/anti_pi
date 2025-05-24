@@ -17,7 +17,7 @@ const AdminSidebar = () => {
         </Link>
         <h2 className="text-xl font-medium mb-6 text-center">Admin Dashboard</h2>
         <nav className="flex flex-col space-y-2">
-        <NavLink 
+          <NavLink 
             to="/admin/users" 
             className={({ isActive }) => 
               isActive 
@@ -28,6 +28,7 @@ const AdminSidebar = () => {
             <FaUser />
             <span>Users</span>
           </NavLink>
+          
           <NavLink 
             to="/admin/products" 
             className={({ isActive }) => 
@@ -39,6 +40,7 @@ const AdminSidebar = () => {
             <FaBoxOpen />
             <span>Products</span>
           </NavLink>
+          
           <NavLink 
             to="/admin/orders" 
             className={({ isActive }) => 
@@ -50,6 +52,7 @@ const AdminSidebar = () => {
             <FaClipboardList />
             <span>Orders</span>
           </NavLink>
+          
           <NavLink 
             to="/admin/shop" 
             className={({ isActive }) => 
