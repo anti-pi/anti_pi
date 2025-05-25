@@ -14,3 +14,15 @@
   .animate-bounce-slow {
     animation: bounce-slow 3s infinite;
   }
+  /* Prevent horizontal scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Optional reset to avoid layout issues */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
