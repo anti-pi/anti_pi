@@ -8,7 +8,7 @@ const cartItemSchema = new mongoose.Schema({
     },
     name: String,
     image: String,
-    reward: String,
+    reward: [Number],
 },
 { _id: false }
 )
@@ -26,4 +26,4 @@ const cartSchema = new mongoose.Schema({
 { timestamps: true }
 );
 
-module.exports = mongoose.model("Cart", cartItemSchema);
+module.exports = mongoose.model("Cart", cartSchema);
