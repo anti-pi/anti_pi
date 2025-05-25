@@ -4,6 +4,7 @@ import FilterSidebar from '../components/Products/FilterSidebar';
 import SortOptions from '../components/Products/SortOptions';
 import { useSearchParams, useParams } from "react-router-dom";
 
+
 function CollectionPage() {
     const [products, setProducts] = useState([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -192,25 +193,34 @@ function CollectionPage() {
                 ) : (
                     filteredProducts.map(product => (
                         <div key={product._id} className="border rounded-lg p-4 bg-white shadow hover:shadow-lg transition relative flex flex-col h-full">
-                            <img
-                                src={product.images[0].url}
-                                alt={product.name}
-                                className="w-full h-40 object-cover rounded mb-3"
-                            />
-                            <h3 className="font-bold text-lg mb-1 flex items-center gap-2">
-                                {product.name}
-                                <span className="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded">{product.brand}</span>
-                                <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{product.type}</span>
-                            </h3>
-                            <p className="text-gray-700 mb-2">₹{product.price}</p>
-                            <p className="text-gray-500 mb-2">Submitted Reports: {product.submits}</p>
-                            {/* Report button at bottom right */}
-                            <button
-                                className="absolute bottom-3 right-3 bg-red-500 text-white px-4 py-1 rounded shadow hover:bg-red-600 text-sm"
-                            >
-                                Report
-                            </button>
-                        </div>
+  <img
+    src={product.images[0].url}
+    alt={product.name}
+    className="w-full h-40 object-cover rounded mb-3"
+  />
+  <h3 className="font-bold text-lg mb-1 flex items-center gap-2">
+    {product.name}
+    <span className="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded">{product.brand}</span>
+    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{product.type}</span>
+  </h3>
+  <p className="text-gray-700 mb-2">₹{product.price}</p>
+  <p className="text-gray-500 mb-2">Submitted Reports: {product.submits}</p>
+
+  <div className="mt-auto flex justify-between">
+    <button
+      onClick={() => addToCart(product)}
+      className="bg-gray-800 text-white px-4 py-1 rounded hover:bg-black transition text-sm"
+    >
+      Add to Save
+    </button>
+    <button
+      className="bg-red-500 text-white px-4 py-1 rounded shadow hover:bg-red-600 text-sm"
+    >
+      Report
+    </button>
+  </div>
+</div>
+
                     ))
                 )}
             </div>

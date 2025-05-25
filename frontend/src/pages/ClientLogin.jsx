@@ -3,17 +3,18 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { loginUser } from '../redux/slices/authSlice';
-import login from '../assets/loginn.jpeg';
+import login from '../assets/partner.jpeg';
 
-const Login = () => {
+const ClientLogin = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [number, setNumber] = useState(''); // <-- use number for phone
+  const [description, setDescription] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(loginUser({ email, password })).unwrap();
+      await dispatch(loginUser({ email, number })).unwrap(); // send number
       toast.success('Logged in successfully!');
     } catch (error) {
       toast.error(error?.message || 'Login failed!');
@@ -44,14 +45,25 @@ const Login = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-semibold mb-2">Password</label>
+            <label className="block text-sm font-semibold mb-2">Phone Number</label>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="tel"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               className="w-full p-2 border rounded"
-              placeholder="Enter your password"
+              placeholder="Enter your phone number"
               required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">Description</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="Enter a description"
+              rows={3}
             />
           </div>
 
@@ -74,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ClientLogin;

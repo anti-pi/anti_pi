@@ -21,6 +21,8 @@ import ProductDetails from './components/Products/ProductDetails';
 import Checkout from './components/Cart/Checkout';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import OrderDetailsPage from './pages/OrderDetailsPage';
+import ClientLogin from './pages/ClientLogin';
+
 
 // Admin Pages
 import AdminHomePage from './pages/Admin/AdminHomePage';
@@ -49,6 +51,7 @@ export const App = () => {
               <Route path="checkout" element={<Checkout />} />
               <Route path="order-confirmation" element={<OrderConfirmationPage />} />
               <Route path="order/:id" element={<OrderDetailsPage />} />
+              <Route path="/register-client" element={<ClientLogin />} />
             </Route>
 
             {/* Admin routes */}

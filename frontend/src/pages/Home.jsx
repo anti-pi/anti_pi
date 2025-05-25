@@ -13,7 +13,7 @@ const Home = () => {
       <ProductDetails />
       <div className='container mx-auto'>
         <h2 className='text-3xl text-center font-bold mb-4'>
-          WHAT DO I PUT HERE I DONT KNOW 
+          START REPORTING     |      START PROTECTING
         </h2>
       </div>
       
