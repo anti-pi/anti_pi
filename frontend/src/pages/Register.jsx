@@ -3,14 +3,18 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import register from "../assets/register.png";
+import { registerUser } from '../redux/slices/authSlice';
+import { useDispatch } from 'react-redux';
+
 const Register = () => {
     const [name, setName] = useState("");
      const [email, setEmail] = useState("");
      const [password, setPassword] =useState("");
+     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("User Registered: " , {name}, {email}, {password});
+        dispatch(registerUser({ name, email, password }));
         toast.success("Registered Successfully");
     };
   return (
