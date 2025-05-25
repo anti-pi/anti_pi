@@ -7,14 +7,14 @@ import login from '../assets/partner.jpeg';
 
 const ClientLogin = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [description, setDescription] = useState(''); // Add this line
+  const [number, setNumber] = useState(''); // <-- use number for phone
+  const [description, setDescription] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(loginUser({ email, password })).unwrap();
+      await dispatch(loginUser({ email, number })).unwrap(); // send number
       toast.success('Logged in successfully!');
     } catch (error) {
       toast.error(error?.message || 'Login failed!');
@@ -45,13 +45,13 @@ const ClientLogin = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-semibold mb-2">Password</label>
+            <label className="block text-sm font-semibold mb-2">Phone Number</label>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="tel"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               className="w-full p-2 border rounded"
-              placeholder="Enter your password"
+              placeholder="Enter your phone number"
               required
             />
           </div>
