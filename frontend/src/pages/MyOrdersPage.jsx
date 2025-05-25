@@ -17,7 +17,7 @@ function MyOrdersPage() {
           orderItems: [
             {
               name: "Product 1",
-              image: "https://picsum.photos/500/500?random=1",
+              image: "https://system32.ink/attachments/1736586223189-webp.178/",
             },
           ],
           totalPrice: 100,
@@ -33,7 +33,7 @@ function MyOrdersPage() {
           orderItems: [
             {
               name: "Product 2",
-              image: "https://picsum.photos/500/500?random=2",
+              image: "https://system32.ink/attachments/1736585801037-webp.177/",
             },
           ],
           totalPrice: 200,

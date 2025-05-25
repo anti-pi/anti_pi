@@ -40,7 +40,7 @@ function CollectionPage() {
                     price: 199,
                     submits: 5,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=1", alt: "Product One" }
+                        { url: "https://system32.ink/attachments/1736585801037-webp.177/", alt: "Product One" }
                     ]
                 },
                 {
@@ -51,7 +51,7 @@ function CollectionPage() {
                     price: 299,
                     submits: 2,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=2", alt: "Product Two" }
+                        { url: "https://dizipro.in/wp-content/uploads/2024/11/Netflix-Premium.webp", alt: "Product Two" }
                     ]
                 },
                 {
@@ -62,7 +62,7 @@ function CollectionPage() {
                     price: 399,
                     submits: 8,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=3", alt: "Product Three" }
+                        { url: "https://i.ytimg.com/vi/KmTYgOkY8zc/sddefault.jpg", alt: "Product Three" }
                     ]
                 },
                 {
@@ -73,7 +73,7 @@ function CollectionPage() {
                     price: 150,
                     submits: 1,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=4", alt: "Product Four" }
+                        { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMmyyn0TJme1JcGM9ZsnRIGY3lrxcFODCd5A&s", alt: "Product Four" }
                     ]
                 },
                 {
@@ -95,7 +95,7 @@ function CollectionPage() {
                     price: 250,
                     submits: 3,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=6", alt: "Product Six" }
+                        { url: "https://s3.envato.com/files/372169923/Theme-Preview/00_preview.jpg", alt: "Product Six" }
                     ]
                 },
                 {
@@ -106,7 +106,7 @@ function CollectionPage() {
                     price: 350,
                     submits: 7,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=7", alt: "Product Seven" }
+                        { url: "https://i.ytimg.com/vi/Srh0GVv2cAM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBGrsaCaQL1ih4Kb6mcAMFkPu98KQ", alt: "Product Seven" }
                     ]
                 },
                 {
@@ -117,7 +117,7 @@ function CollectionPage() {
                     price: 175,
                     submits: 4,
                     images: [
-                        { url: "https://picsum.photos/200/200?random=8", alt: "Product Eight" }
+                        { url: "https://i.ytimg.com/vi/KXTANzN1hfE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCA6-lEkp2KeIXzJ5oCuTDTefTr8g", alt: "Product Eight" }
                     ]
                 }
             ];
