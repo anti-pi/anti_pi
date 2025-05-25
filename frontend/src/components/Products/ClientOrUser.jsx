@@ -14,11 +14,11 @@ const ClientOrUser = () => {
             background: "linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%)"
           }}
         >
-          <Link to="/register-user">
+          <Link to="/login">
             <img 
               src={womensCollectionImage} 
               alt="users" 
-              className="w-full h-[250px] md:h-[400px] object-contain rounded-lg hover:opacity-90 transition border-[1px] border-black"
+              className="w-full h-[250px] md:h-[400px] object-contain rounded-lg hover:opacity-90 transition  "
 
 
             />
@@ -35,8 +35,7 @@ const ClientOrUser = () => {
             <img 
               src={mensCollectionImage} 
               alt="clients" 
-               className="w-full h-[250px] md:h-[400px] object-contain rounded-lg hover:opacity-90 transition border-[1px] border-black"
-            />
+               className="w-full h-[250px] md:h-[400px] object-contain rounded-lg hover:opacity-90 transition ] "            />
           </Link>
         </div>
 
