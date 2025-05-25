@@ -26,19 +26,19 @@ const OrderManagement = () => {
 
     return (
         <div>
-            <h2 className="text-2xl font-bold mb-6">Order Management</h2>
+            <h2 className="text-2xl font-bold mb-6">Report Management</h2>
             <div className="overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="min-w-full text-left text-gray-500">
                     <thead className="bg-gray-100 text-xs uppercase text-gray-700">
                         <tr>
                             <th className="px-4 py-3">
-                                Order Id
+                                Report Id
                             </th>
                             <th className="px-4 py-3">
-                                Customer
+                                UserName
                             </th>
                             <th className="px-4 py-3">
-                                Total Price
+                                Rewards
                             </th>
                             <th className="px-4 py-3">
                                 Status
@@ -64,16 +64,16 @@ const OrderManagement = () => {
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         >
                                             <option value="processing">Processing</option>
-                                            <option value="delivered">Delivered</option>
-                                            <option value="cancelled">Cancelled</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Rejected">Rejected</option>
                                         </select>
                                     </td>
                                     <td className="p-4">
                                         <button
-                                            onClick={() => handleStatusChange(order._id, "delivered")}
+                                            onClick={() => handleStatusChange(order._id, "Accepted")}
                                             className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
                                         >
-                                            Mark As Delivered
+                                            Mark As Accepted
                                         </button>
                                     </td>
                                 </tr>

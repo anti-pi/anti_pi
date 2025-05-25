@@ -8,14 +8,14 @@ const ProductManagement = () => {
             name: "Sample Product",
             price: 99.99,
             category: "Electronics",
-            stock: 10
+            stock: "Brand 1"
         },
         {
             id: 2,
             name: "Sample Product 2",
             price: 199.99,
             category: "Electronics",
-            stock: 5
+            stock: "Brand 2"
         }
     ]);
 
@@ -74,7 +74,7 @@ const ProductManagement = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Price</label>
+                        <label className="block text-gray-700">Reward</label>
                         <input 
                             type="number"
                             name="price"
@@ -98,9 +98,9 @@ const ProductManagement = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Stock</label>
+                        <label className="block text-gray-700">Brand</label>
                         <input 
-                            type="number"
+                            type="text"
                             name="stock"
                             value={formData.stock}
                             onChange={handleChange}
@@ -125,9 +125,9 @@ const ProductManagement = () => {
                     <thead className="bg-gray-100 text-xs uppercase text-gray-700">
                         <tr>
                             <th className="py-3 px-4">Name</th>
-                            <th className="py-3 px-4">Price</th>
+                            <th className="py-3 px-4">Reward</th>
                             <th className="py-3 px-4">Category</th>
-                            <th className="py-3 px-4">Stock</th>
+                            <th className="py-3 px-4">Brand</th>
                             <th className="py-3 px-4">Actions</th>
                         </tr>
                     </thead>

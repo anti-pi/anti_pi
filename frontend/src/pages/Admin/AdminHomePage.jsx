@@ -9,7 +9,7 @@ const AdminHomePage = () => {
                 name: "Aditya",
             },
             totalPrice: 1000,
-            status: "completed"
+            status: "Accepted"
         },
         {
             _id: 132445,
@@ -17,7 +17,7 @@ const AdminHomePage = () => {
                 name: "Anzar",
             },
             totalPrice: 10,
-            status: "processing"
+            status: "Processing"
         },
         {
             _id: 132645,
@@ -25,15 +25,23 @@ const AdminHomePage = () => {
                 name: "Farzeen",
             },
             totalPrice: 1000,
-            status: "processing"
+            status: "Rejected"
         }
     ];
 
     const getStatusStyle = (status) => {
-        return status === "completed" 
-            ? "px-2 py-1 text-xs rounded-full bg-green-100 text-green-800"
-            : "px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800";
-    };
+        switch (status) {
+          case "Accepted":
+            return "px-2 py-1 text-xs rounded-full bg-green-100 text-green-800";
+          case "Processing":
+            return "px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800";
+          case "Rejected":
+            return "px-2 py-1 text-xs rounded-full bg-red-100 text-red-800";
+          default:
+            return "px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800"; // optional fallback
+        }
+      };
+      
 
     const formatPrice = (price) => {
         return `$${price.toLocaleString()}`;
@@ -60,13 +68,13 @@ const AdminHomePage = () => {
                         to="/admin/orders" 
                         className="text-blue-500 hover:text-blue-600"
                     >
-                        View Orders
+                        View Reports
                     </Link>
                 </div>
 
                 <div className="p-4 shadow-md rounded-lg">
-                    <h2 className="text-xl font-semibold mb-2">Total Revenue</h2>
-                    <p className="text-2xl font-bold mb-2">$2</p>
+                    <h2 className="text-xl font-semibold mb-2">Average Revenue</h2>
+                    <p className="text-2xl font-bold mb-2">$100</p>
                     <Link 
                         to="/admin/orders" 
                         className="text-blue-500 hover:text-blue-600"
@@ -77,14 +85,14 @@ const AdminHomePage = () => {
             </div>
 
             <div className="mt-6">
-                <h2 className="text-2xl font-bold mb-4">Recent Orders</h2>
+                <h2 className="text-2xl font-bold mb-4">Recent Reports</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-left text-gray-500">
                         <thead className="bg-gray-100 text-xs uppercase text-gray-700">
                             <tr>
-                                <th className="py-3 px-4">Order ID</th>
+                                <th className="py-3 px-4">Report ID</th>
                                 <th className="py-3 px-4">User</th>
-                                <th className="py-3 px-4">Total Price</th>
+                                <th className="py-3 px-4">Reward</th>
                                 <th className="py-3 px-4">Status</th>
                             </tr>
                         </thead>
@@ -104,7 +112,7 @@ const AdminHomePage = () => {
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan="4" className="p-4 text-center text-gray-500">No orders found</td>
+                                    <td colSpan="4" className="p-4 text-center text-gray-500">No Reports found</td>
                                 </tr>
                             )}
                         </tbody>

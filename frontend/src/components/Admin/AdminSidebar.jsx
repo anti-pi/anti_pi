@@ -50,7 +50,7 @@ const AdminSidebar = () => {
             }
           > 
             <FaClipboardList />
-            <span>Orders</span>
+            <span>Reports</span>
           </NavLink>
           
           <NavLink 

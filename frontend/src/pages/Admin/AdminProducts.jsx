@@ -5,7 +5,7 @@ const AdminProducts = () => {
     <div className="bg-white rounded-lg shadow-md p-6">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Products Management</h1>
       <div className="bg-gray-50 p-4 rounded-lg">
-        <p className="text-gray-800 text-lg">Manage your store's products here.</p>
+        <p className="text-gray-800 text-lg">Manage products here.</p>
         <div className="mt-4 space-y-4">
           <div className="flex justify-between items-center">
             <span className="text-gray-700">Total Products: 0</span>
