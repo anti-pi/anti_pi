@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { loginUser } from '../redux/slices/authSlice';
-import login from '../assets/loginn.jpeg';
+import login from '../assets/partner.jpeg';
 
-const Login = () => {
+const ClientLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [description, setDescription] = useState(''); // Add this line
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -55,6 +56,17 @@ const Login = () => {
             />
           </div>
 
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">Description</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="Enter a description"
+              rows={3}
+            />
+          </div>
+
           <button type="submit" className="w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800 transition">
             Sign In
           </button>
@@ -74,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ClientLogin;
