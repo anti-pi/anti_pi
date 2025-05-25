@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-
+import img1 from "../assets/apnaclg.jpg";
 const CartContext = createContext();
 
 const defaultProducts = [
@@ -15,6 +15,13 @@ const defaultProducts = [
     name: "Scaler DSA in C++",
     reward: "200₹ - 1000₹",
     image: "https://system32.ink/attachments/1736585801037-webp.177/",
+    submits: 2,
+  },
+  {
+    productId: 3,
+    name: "Sigma 7.0 2025 Apna College",
+    reward: "100₹ - 500₹",
+    image: img1,
     submits: 2,
   }
 ];
