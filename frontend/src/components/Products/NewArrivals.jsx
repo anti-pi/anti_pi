@@ -225,53 +225,6 @@ const NewArrivals = () => {
 
     return (
         <>
-            {/* Image Slider at top */}
-            <Slider
-                {...{
-                    dots: true,
-                    infinite: true,
-                    speed: 600,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2500,
-                    arrows: true,
-                    pauseOnHover: true,
-                    appendDots: dots => (
-                        <div style={{ display: "flex", justifyContent: "center", marginTop: "16px" }}>
-                            <ul style={{ margin: 0, padding: 0 }}> {dots} </ul>
-                        </div>
-                    ),
-                    prevArrow: <button className="slick-arrow slick-prev bg-white border rounded-full p-2 absolute left-2 top-1/2 -translate-y-1/2 z-10"><FiChevronLeft className="text-2xl" /></button>,
-                    nextArrow: <button className="slick-arrow slick-next bg-white border rounded-full p-2 absolute right-2 top-1/2 -translate-y-1/2 z-10"><FiChevronRight className="text-2xl" /></button>,
-                }}
-            >
-                {newArrivals.map(product => (
-                    <div key={product._id} >
-                        <img
-                            src={product.image[0].url}
-                            alt={product.image[0].altText || product.name}
-                            className="rounded-xl shadow mb-4"
-                            style={{
-                                display : "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                width: "100%",
-                                maxWidth: "350px",  
-                                height: "220px",
-                                objectFit: "cover",
-                                background: "#fff",
-                                margin: "0 auto"
-                               
-                            }}
-                        />
-                        <h3 className="text-xl font-semibold mb-1 mx-auto">{product.name}</h3>
-                        <p className="text-sm text-gray-500 mx-auto">{product.brand} • {product.type}</p>
-                        <p className="text-md mt-1 font-medium text-green-600 mx-auto">{product.reward}</p>
-                        <p className="text-sm text-gray-400 mx-auto">Submits: {product.submits}</p>
-                    </div>
-                ))}
-            </Slider>
 
             {/* New Arrivals Section */}
             <section className="py-16 px-4 lg:px-0">
@@ -281,25 +234,10 @@ const NewArrivals = () => {
                         Discover the latest product straight from the brand. Increase your chance
                         to win high value reward.
                     </p>
-                    <div className="absolute right-0 bottom-[-30px] flex space-x-2">
-                        <button
-                            onClick={() => scroll("left")}
-                            disabled={!canScrollLeft}
-                            className={`p-2 rounded border ${canScrollLeft ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
-                        >
-                            <FiChevronLeft className="text-2xl" />
-                        </button>
-                        <button
-                            onClick={() => scroll("right")}
-                            disabled={!canScrollRight}
-                            className={`p-2 rounded border ${canScrollRight ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
-                        >
-                            <FiChevronRight className="text-2xl" />
-                        </button>
-                    </div>
                 </div>
-
-                {/* Product Cards Scrollable Row */}
+                {/* Add gap below the Trending Now section */}
+              
+                {/* You can keep the scrollable row below if you want both carousel and scroll, or remove if not needed */}
                 <div
                     ref={scrollRef}
                     onMouseDown={handleMouseDown}
@@ -323,6 +261,40 @@ const NewArrivals = () => {
                     ))} */}
                 </div>
             </section>
+            <Slider {...settings}>
+                {newArrivals.map(product => (
+                    <div
+                        key={product._id}
+                        className="flex flex-col items-center justify-center"
+                        style={{
+                            minHeight: "600px", // Large but reasonable
+                            minWidth: "600px",  // Large but reasonable
+                            padding: "40px 0",
+                        }}
+                    >
+                        <img
+                            src={product.image[0].url}
+                            alt={product.image[0].altText || product.name}
+                            className="rounded-xl shadow mb-6"
+                            style={{
+                                width: "700px",   // Large image
+                                height: "400px",  // Large image
+                                objectFit: "cover",
+                                background: "#fff",
+                                margin: "0 auto"
+                            }}
+                        />
+                        <div className="w-full flex flex-col items-center text-center">
+                            <h3 className="text-3xl font-bold mb-2">{product.name}</h3>
+                            <p className="text-lg text-gray-500 mb-1">{product.brand} • {product.type}</p>
+                            <p className="text-xl font-medium text-green-600 mb-1">{product.reward}</p>
+                            <p className="text-md text-gray-400">Submits: {product.submits}</p>
+                        </div>
+                    </div>
+                ))}
+            </Slider>
+                <div className="h-16"></div>
+                    <div className="h-16"></div>
         </>
     );
 };
