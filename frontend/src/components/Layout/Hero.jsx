@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 
 export default function Hero() {
+  const navigate = useNavigate(); // Add this hook
+
   return (
     <section
       className="relative min-h-[80vh] flex flex-col justify-center items-center px-4 overflow-hidden"
@@ -31,9 +34,9 @@ export default function Hero() {
       </div>
 
       {/* Badge */}
-      <div className="inline-block bg-gray-100 text-gray-700 px-4 py-1 rounded-full font-semibold mb-4 text-sm shadow">
+      {/* <div className="inline-block bg-gray-100 text-gray-700 px-4 py-1 rounded-full font-semibold mb-4 text-sm shadow">
         <span className="mr-2">🏆</span> Best security service
-      </div>
+      </div> */}
       {/* Headline */}
       <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 text-center">
         Your Digital Fortress <br /> Starts Here.
@@ -45,12 +48,13 @@ export default function Hero() {
       </p>
       {/* Buttons */}
       <div className="flex gap-4 justify-center mb-12">
-        <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-800 transition">
-          Book a Demo <span className="ml-1">↗️</span>
+        <button
+          className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-800 transition"
+          onClick={() => navigate("/register-client")} // Redirect on click
+        >
+          Book a Demo <span className="ml-1"></span>
         </button>
-        <button className="bg-white border border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">
-          Learn More
-        </button>
+        
       </div>
       {/* Partner Logos */}
       <div className="flex justify-center gap-10 opacity-40 mt-8">
