@@ -3,10 +3,10 @@ import React from 'react';
 const AdminOrders = () => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">Orders Management</h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">Reports Management</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-          <h3 className="text-blue-800 font-medium mb-2">Total Orders</h3>
+          <h3 className="text-blue-800 font-medium mb-2">Total Reports</h3>
           <p className="text-2xl font-bold text-blue-600">2</p>
         </div>
         <div className="bg-green-50 p-4 rounded-lg border border-green-100">
@@ -19,13 +19,13 @@ const AdminOrders = () => {
         </div>
       </div>
       <div className="bg-gray-50 p-4 rounded-lg">
-        <p className="text-gray-800 text-lg">View and manage customer orders here.</p>
+        <p className="text-gray-800 text-lg">View and manage user's Reports here.</p>
         <div className="mt-4 space-y-4">
           <div className="flex justify-between items-center">
-            <span className="text-gray-700">Recent Orders: 2</span>
+            <span className="text-gray-700">Recent Reports: 2</span>
             <div className="flex space-x-2">
               <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-                Export Orders
+                Export Reports
               </button>
             </div>
           </div>

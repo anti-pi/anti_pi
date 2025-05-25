@@ -19,7 +19,7 @@ const EditProductPage = () => {
             name: "Sample Product",
             price: "99.99",
             category: "Electronics",
-            stock: "10"
+            stock: "Brand 1"
         };
         setFormData(mockProduct);
     }, [id]);
@@ -62,7 +62,7 @@ const EditProductPage = () => {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-gray-700 mb-2">Price</label>
+                    <label className="block text-gray-700 mb-2">Reward</label>
                     <input 
                         type="number"
                         name="price"
@@ -86,9 +86,9 @@ const EditProductPage = () => {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-gray-700 mb-2">Stock</label>
+                    <label className="block text-gray-700 mb-2">Brand</label>
                     <input 
-                        type="number"
+                        type="text"
                         name="stock"
                         value={formData.stock}
                         onChange={handleChange}
